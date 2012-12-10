@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="org.iiitb.exam.mt2011062.tours.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            name="RCP Perspective"
+            class="org.iiitb.exam.mt2011062.tours.Perspective"
+            id="org.iiitb.exam.MT2011062.tours.perspective">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               label="Plan Travel">
+            <command
+                  commandId="org.iiitb.exam.MT2011062.tours.tourcommand"
+                  label="Start"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            defaultHandler="org.iiitb.exam.mt2011062.tours.command.TourCommand"
+            id="org.iiitb.exam.MT2011062.tours.tourcommand"
+            name="Travel">
+      </command>
+   </extension>
+
+</plugin>
